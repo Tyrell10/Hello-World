@@ -1,45 +1,37 @@
 #include <iostream>
 
-class balok{
-    public:
-        void setPanjang(float p);
-        void setLebar(float l);
-        void setTinggi(float t);
-        float getVolume();
-    
+class Box{
     private:
-        float panjang, lebar, tinggi, Volume;
-}; 
-void balok::setPanjang(float p){
+        long panjang, lebar, tinggi, volume;
+
+    public:
+        void setPanjang(long p);
+        void setLebar(long l);
+        void setTinggi(long t);
+        long getVolume();
+};
+void Box::setPanjang(long p){
     panjang = p;
 }
-void balok::setLebar(float l){
+void Box::setLebar(long l){
     lebar = l;
 }
-void balok::setTinggi(float t){
+void Box::setTinggi(long t){
     tinggi = t;
 }
-float balok::getVolume(){
-    float Volume = panjang*lebar*tinggi;
-    return Volume;
+long Box::getVolume(){
+    volume = panjang * lebar * tinggi;
+    return volume;
 }
 
 int main(){
-    balok Volume;
-    float p, l, t;
-    std::cout << "Masukkan panjang : ";
-    std::cin >> p;
-    
-    std::cout << "Masukkan lebar   : ";
-    std::cin >> l;
-    
-    std::cout << "Masukkan Tinggi  : ";
-    std::cin >> t;
+    Box Balok;
 
-    Volume.setPanjang(p);
-    Volume.setLebar(l);
-    Volume.setTinggi(t);
-    std::cout << "Volume Balok = " << Volume.getVolume() << std::endl;
+    Balok.setPanjang(4.0);
+    Balok.setLebar(4.0);
+    Balok.setTinggi(4.0);
+
+    std::cout << "Volume Balok = " << Balok.getVolume() << std::endl;
 
     return 0;
 }
